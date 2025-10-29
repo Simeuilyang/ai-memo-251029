@@ -25,8 +25,8 @@ export async function getMemos(): Promise<Memo[]> {
     content: memo.content,
     category: memo.category,
     tags: memo.tags || [],
-    createdAt: memo.created_at,
-    updatedAt: memo.updated_at,
+    createdAt: memo.created_at || new Date().toISOString(),
+    updatedAt: memo.updated_at || new Date().toISOString(),
   }))
 }
 
@@ -60,8 +60,8 @@ export async function createMemo(formData: MemoFormData): Promise<Memo> {
     content: data.content,
     category: data.category,
     tags: data.tags || [],
-    createdAt: data.created_at,
-    updatedAt: data.updated_at,
+    createdAt: data.created_at || new Date().toISOString(),
+    updatedAt: data.updated_at || new Date().toISOString(),
   }
 }
 
@@ -97,8 +97,8 @@ export async function updateMemo(
     content: data.content,
     category: data.category,
     tags: data.tags || [],
-    createdAt: data.created_at,
-    updatedAt: data.updated_at,
+    createdAt: data.created_at || new Date().toISOString(),
+    updatedAt: data.updated_at || new Date().toISOString(),
   }
 }
 
@@ -149,8 +149,8 @@ export async function searchMemos(query: string): Promise<Memo[]> {
     content: memo.content,
     category: memo.category,
     tags: memo.tags || [],
-    createdAt: memo.created_at,
-    updatedAt: memo.updated_at,
+    createdAt: memo.created_at || new Date().toISOString(),
+    updatedAt: memo.updated_at || new Date().toISOString(),
   }))
 }
 
@@ -179,8 +179,8 @@ export async function getMemosByCategory(category: string): Promise<Memo[]> {
     content: memo.content,
     category: memo.category,
     tags: memo.tags || [],
-    createdAt: memo.created_at,
-    updatedAt: memo.updated_at,
+    createdAt: memo.created_at || new Date().toISOString(),
+    updatedAt: memo.updated_at || new Date().toISOString(),
   }))
 }
 
@@ -207,8 +207,8 @@ export async function getMemoById(id: string): Promise<Memo | null> {
     content: data.content,
     category: data.category,
     tags: data.tags || [],
-    createdAt: data.created_at,
-    updatedAt: data.updated_at,
+    createdAt: data.created_at || new Date().toISOString(),
+    updatedAt: data.updated_at || new Date().toISOString(),
   }
 }
 
